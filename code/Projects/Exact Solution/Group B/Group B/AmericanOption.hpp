@@ -1,25 +1,19 @@
 #ifndef AMERICANOPTION_HPP
 #define AMERICANOPTION_HPP
 
-
+#include "Option.hpp"
 #include <iostream>
 using namespace std;
 
 
-class PerpetualAmericanOption
+class PerpetualAmericanOption : public Option
 {
 private:
-	//Private member variables
-	double K;//K (strike price)
-	double sig; //sig (volatility).
-	double r;//r(risk - free interest rate).
-	double S;//S(current stock price where we wish to price the option).
-	double b;		// Cost of carry Defaut to r
 
+	// Private helper function for calculating Y1, Y2
 	double C = CallPrice();//C = call option price 
 	double P = PutPrice();//P = put option price
 	
-
 	//string optType;
 
 	//Private helper function for d1, d2
@@ -28,10 +22,13 @@ private:
 
 	//Functions
 	//Calculate Call price
-	double CallPrice() const;
+	double CallPrice() const override;
 
 	//Calculate Put price
-	double PutPrice() const;
+	double PutPrice() const override;
+
+
+
 
 
 public:

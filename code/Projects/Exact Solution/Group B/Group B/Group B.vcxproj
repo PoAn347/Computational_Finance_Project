@@ -134,6 +134,7 @@
     <ClInclude Include="AmericanOption.hpp" />
     <ClInclude Include="Mesh.hpp" />
     <ClInclude Include="NormalFunction.hpp" />
+    <ClInclude Include="Option.hpp" />
     <ClInclude Include="OptionArrayBase.hpp" />
     <ClInclude Include="OptionArrayPrice.hpp" />
     <ClInclude Include="OptionMatrixBase.hpp" />
@@ -142,6 +143,7 @@
   <ItemGroup>
     <ClCompile Include="AmericanOption.cpp" />
     <ClCompile Include="gourpB.cpp" />
+    <ClCompile Include="Option.cpp" />
     <ClCompile Include="OptionArrayBase.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>

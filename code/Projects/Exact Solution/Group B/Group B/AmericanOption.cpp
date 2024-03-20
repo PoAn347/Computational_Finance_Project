@@ -38,15 +38,13 @@ double PerpetualAmericanOption::PutPrice() const
 }
 
 //Default Constructor
-PerpetualAmericanOption::PerpetualAmericanOption(): K(100.0), sig(0.1), r(0.1), S(110.0), b(0.02)
+PerpetualAmericanOption::PerpetualAmericanOption() : Option(0, 100.0, 0.1, 0.1, 110.0, 0.02)
 {
-	//cout << "Default constructor of PlainOption" << endl;
-	//cout << "Call Option Price: " << C << endl;
-	//cout << "Put Option Price: " << P << endl;
+
 }
 
 //Constructor with given value
-PerpetualAmericanOption::PerpetualAmericanOption(double K, double sig, double r, double S, double b ): K(K), sig(sig), r(r), S(S), b(b)
+PerpetualAmericanOption::PerpetualAmericanOption(double K, double sig, double r, double S, double b ): Option(0, K, sig, r, S, b)
 {
 	//cout << "Given value constructor of PlainOption" << endl;
 	cout << "Call Option Price: " << C << endl;
@@ -54,16 +52,9 @@ PerpetualAmericanOption::PerpetualAmericanOption(double K, double sig, double r,
 }
 
 //copy constructor
-PerpetualAmericanOption::PerpetualAmericanOption(const PerpetualAmericanOption& o2)
+PerpetualAmericanOption::PerpetualAmericanOption(const PerpetualAmericanOption& o2) : Option(o2)
 {
-	//cout << "Copy constructor of PlainOption" << endl;
-	K = o2.K;
-	//cout << K << endl;
-	sig = o2.sig;
-	//cout << sig << endl;
-	r = o2.r;
-	S = o2.S;
-	b = o2.b;
+	
 }
 
 //Destructor
@@ -77,11 +68,7 @@ PerpetualAmericanOption& PerpetualAmericanOption::operator = (const PerpetualAme
 {
 	if (this == &source) return *this;
 
-	K = source.K;
-	sig = source.sig;
-	r = source.r;
-	S = source.S;
-	b = source.b;
+	Option::operator=(source);
 	
 	return *this;
 }

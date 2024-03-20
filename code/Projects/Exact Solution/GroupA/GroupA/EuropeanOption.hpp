@@ -1,21 +1,14 @@
 #ifndef EUROPEANOPTION_HPP
 #define EUROPEANOPTION_HPP
 
-
+#include "Option.hpp"
 #include <iostream>
 using namespace std;
 
 
-class PlainOption
+class PlainOption : public Option 
 {
 private:
-	//Private member variables
-	double T; //T (expiry time/maturity).
-	double K;//K (strike price)
-	double sig; //sig (volatility).
-	double r;//r(risk - free interest rate).
-	double S;//S(current stock price where we wish to price the option).
-	double b;		// Cost of carry Defaut to r
 
 	double C = CallPrice();//C = call option price 
 	double P = PutPrice();//P = put option price
@@ -39,10 +32,10 @@ private:
 
 	//Functions
 	//Calculate Call price
-	double CallPrice() const;
+	double CallPrice() const override;
 
 	//Calculate Put price
-	double PutPrice() const;
+	double PutPrice() const override;
 
 	//Calculate Option's Delta
 	double CallDelta() const;

@@ -48,6 +48,9 @@
     <ClInclude Include="DividedDifferences.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Option.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="gourpA.cpp">
@@ -78,6 +81,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DividedDifferences.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Option.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

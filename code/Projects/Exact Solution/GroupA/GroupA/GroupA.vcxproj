@@ -137,6 +137,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="NormalFunction.hpp" />
+    <ClInclude Include="Option.hpp" />
     <ClInclude Include="OptionArrayBase.hpp" />
     <ClInclude Include="OptionArrayDelta.hpp" />
     <ClInclude Include="OptionArrayPrice.hpp" />
@@ -149,6 +150,7 @@
     <ClCompile Include="DividedDifferences.cpp" />
     <ClCompile Include="EuropeanOption.cpp" />
     <ClCompile Include="gourpA.cpp" />
+    <ClCompile Include="Option.cpp" />
     <ClCompile Include="OptionArrayBase.cpp" />
     <ClCompile Include="OptionArrayDelta.cpp" />
     <ClCompile Include="OptionArrayPrice.cpp" />

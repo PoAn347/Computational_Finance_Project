@@ -114,15 +114,15 @@ double PlainOption::PutTheta() const
 }
 
 //Default Constructor
-PlainOption::PlainOption(): T(1.0), K(10.0), sig(0.5), r(0.12), S(5.0), b(0.12)
+PlainOption::PlainOption(): Option(1.0, 10.0, 0.5, 0.12, 5.0, 0.12) 
 {
-	//cout << "Default constructor of PlainOption" << endl;
+//cout << "Default constructor of PlainOption" << endl;
 	//cout << "Call Option Price: " << C << endl;
 	//cout << "Put Option Price: " << P << endl;
 }
 
 //Constructor with given value
-PlainOption::PlainOption(double T, double K, double sig, double r, double S, double b ): T(T), K(K), sig(sig), r(r), S(S), b(b)
+PlainOption::PlainOption(double T, double K, double sig, double r, double S, double b ): Option(T, K, sig, r, S, b)
 {
 	//cout << "Given value constructor of PlainOption" << endl;
 	cout << "Call Option Price: " << C << endl;
@@ -130,18 +130,18 @@ PlainOption::PlainOption(double T, double K, double sig, double r, double S, dou
 }
 
 //copy constructor
-PlainOption::PlainOption(const PlainOption& o2)
+PlainOption::PlainOption(const PlainOption& o2) : Option(o2)
 {
 	//cout << "Copy constructor of PlainOption" << endl;
-	T = o2.T;
+	//T = o2.T;
 	//cout << T << endl;
-	K = o2.K;
+	//K = o2.K;
 	//cout << K << endl;
 	sig = o2.sig;
 	//cout << sig << endl;
-	r = o2.r;
-	S = o2.S;
-	b = o2.b;
+	//r = o2.r;
+	//S = o2.S;
+	//b = o2.b;
 }
 
 //Destructor
@@ -155,12 +155,7 @@ PlainOption& PlainOption::operator = (const PlainOption& source)
 {
 	if (this == &source) return *this;
 
-	T = source.T;
-	K = source.K;
-	sig = source.sig;
-	r = source.r;
-	S = source.S;
-	b = source.b;
+	Option::operator=(source);
 	
 	return *this;
 }
